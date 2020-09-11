@@ -10,10 +10,12 @@ spec:
   selector:
     matchLabels:
       app: guestbook-ui
+      environment: development
   template:
     metadata:
       labels:
         app: guestbook-ui
+        environment: development
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
