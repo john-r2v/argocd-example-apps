@@ -2,10 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui
-  annotations: {
-    "environment" : "Production-1",
-    "commit_msg" : "Commit-Message"
-  }
+  annotations:
+    recipients.argocd-notifications.argoproj.io: slack:john-test
 spec:
   replicas: 1
   revisionHistoryLimit: 3
