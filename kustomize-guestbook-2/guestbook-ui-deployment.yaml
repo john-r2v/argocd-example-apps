@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guestbook-ui-2
+  annotations:
+    recipients.argocd-notifications.argoproj.io: slack:john-test
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: guestbook-ui-2
+      environment: staging
+  template:
+    metadata:
+      labels:
+        app: guestbook-ui-2
+        environment: staging
+    spec:
+      containers:
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-ui-2
+        ports:
+        - containerPort: 80
