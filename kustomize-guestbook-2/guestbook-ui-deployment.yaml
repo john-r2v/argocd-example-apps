@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui-2
+  labels:
+    environment: staging
   annotations:
     recipients.argocd-notifications.argoproj.io: slack:john-test
 spec:
