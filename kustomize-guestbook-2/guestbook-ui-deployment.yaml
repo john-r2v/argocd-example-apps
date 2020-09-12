@@ -3,8 +3,7 @@ kind: Deployment
 metadata:
   name: guestbook-ui-2
   annotations:
-    - recipients.argocd-notifications.argoproj.io: slack:john-test-staging
-    - recipients.argocd-notifications.argoproj.io: slack:john-test
+    recipients.argocd-notifications.argoproj.io: slack:john-test-staging
 spec:
   replicas: 1
   revisionHistoryLimit: 3
