@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui-2
-  annotations:
-    recipients.argocd-notifications.argoproj.io: slack:john-test-staging-sdkmflsdmlfmsal
 spec:
   replicas: 1
   revisionHistoryLimit: 3
